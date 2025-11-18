@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📊 Dashboard</h2>
+
+<div class="card">
+    <h3>Welcome, {{ user[1] }}!</h3>
+    <p><strong>Role:</strong> {{ user[4] }}</p>
+    <p><strong>Email:</strong> {{ user[3] }}</p>
+    <p><strong>Balance:</strong> ${{ user[5] }}</p>
+    <p><strong>User ID:</strong> {{ user[0] }}</p>
+</div>
+
+<div class="card">
+    <h3>💬 Post a Message (XSS Vulnerable)</h3>
+    <form method="POST" action="/post_message">
+        <textarea name="message" rows="4" placeholder="Write your message here..." required></textarea>
+        <button type="submit" class="btn">Post Message</button>
+    </form>
+    
+    <p style="margin-top: 15px;"><strong>💡 Try XSS:</strong></p>
+    <ul style="margin-left: 20px;">
+        <li><code>&lt;script&gt;alert('XSS')&lt;/script&gt;</code></li>
+        <li><code>&lt;img src=x onerror=alert('XSS')&gt;</code></li>
+        <li><code>&lt;svg onload=alert('XSS')&gt;</code></li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>📝 Recent Messages</h3>
+    {% if messages %}
+        {% for msg in messages %}
+        <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 5px; border: 1px solid #ddd;">
+            <small style="color: #666;">{{ msg[3] }}</small>
+            <p style="margin-top: 10px;">{{ msg[2]|safe }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h3>🔓 IDOR Vulnerability</h3>
+    <p>Try accessing other user profiles by changing the ID:</p>
+    <p><a href="/profile/1" class="btn">View Profile #1</a>
+       <a href="/profile/2" class="btn">View Profile #2</a>
+       <a href="/profile/3" class="btn">View Profile #3</a></p>
+</div>
+{% endblock %}

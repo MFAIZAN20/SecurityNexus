@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>🔍 User Search (Information Disclosure)</h2>
+
+<div class="card">
+    <form method="GET" action="/search">
+        <input type="text" name="q" placeholder="Search users..." value="{{ query }}">
+        <button type="submit" class="btn">Search</button>
+    </form>
+</div>
+
+{% if results %}
+<div class="card">
+    <h3>Search Results</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Balance</th>
+        </tr>
+        {% for user in results %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td><code>{{ user[2] }}</code></td>
+            <td>{{ user[3] }}</td>
+            <td>{{ user[4] }}</td>
+            <td>${{ user[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <div class="error">
+        <strong>⚠️ Information Disclosure Vulnerability!</strong>
+        <p>This search reveals sensitive information including password hashes!</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

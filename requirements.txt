@@ -1,0 +1,44 @@
+# CyberAttack Lab Dependencies
+
+# Web Framework
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# HTTP Requests
+requests==2.32.5
+urllib3==2.5.0
+
+# HTML Parsing
+beautifulsoup4==4.12.2
+# lxml==5.1.0  # Commented out - has compilation issues, BeautifulSoup works without it
+
+# Advanced SQL Scanner Features (for robust v2 scanner)
+faker==22.0.0
+tenacity==8.2.3
+user-agents==2.2.0
+
+# PDF Processing
+PyPDF2==3.0.1
+
+# Image Processing
+Pillow==12.0.0
+
+# Database
+# (SQLite is built into Python)
+
+# Networking (built into Python)
+# socket, threading, queue
+
+# Additional useful libraries
+python-dateutil==2.8.2
+pymysql==1.1.0
+colorama==0.4.6
+
+# Security Hardening Tool Dependencies
+rich==13.7.0
+httpx==0.27.0
+typer==0.9.0
+dnspython==2.6.1
+
+# Advanced Attack Modules
+pyjwt==2.8.0  # JWT token manipulation

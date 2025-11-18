@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>👤 User Profile</h2>
+
+<div class="card">
+    <h3>{{ user[1] }}'s Profile</h3>
+    <p><strong>User ID:</strong> {{ user[0] }}</p>
+    <p><strong>Username:</strong> {{ user[1] }}</p>
+    <p><strong>Email:</strong> {{ user[3] }}</p>
+    <p><strong>Role:</strong> {{ user[4] }}</p>
+    <p><strong>Balance:</strong> ${{ user[5] }}</p>
+    <p><strong>Password Hash:</strong> <code>{{ user[2] }}</code></p>
+</div>
+
+<div class="card">
+    <h3>🔓 IDOR Vulnerability Demonstrated</h3>
+    <p>Notice how you can access ANY user's profile without authentication by just changing the URL parameter!</p>
+    <p>This is an <strong>Insecure Direct Object Reference (IDOR)</strong> vulnerability.</p>
+</div>
+{% endblock %}

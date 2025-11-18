@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>💸 Money Transfer (CSRF Vulnerable)</h2>
+
+<div class="card">
+    <form method="POST" action="/transfer">
+        <label>Recipient Username:</label>
+        <input type="text" name="recipient" required>
+        
+        <label>Amount ($):</label>
+        <input type="number" name="amount" min="1" required>
+        
+        <button type="submit" class="btn">Transfer Money</button>
+    </form>
+</div>
+
+<div class="card">
+    <h3>🎯 CSRF Attack Demonstration</h3>
+    <p>This form has NO CSRF protection. An attacker could create a malicious page that automatically transfers money:</p>
+    <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">
+&lt;!-- Attacker's malicious page --&gt;
+&lt;form action="http://localhost:5000/transfer" method="POST" id="csrf"&gt;
+    &lt;input type="hidden" name="recipient" value="attacker"&gt;
+    &lt;input type="hidden" name="amount" value="1000"&gt;
+&lt;/form&gt;
+&lt;script&gt;document.getElementById('csrf').submit();&lt;/script&gt;
+    </pre>
+</div>
+{% endblock %}

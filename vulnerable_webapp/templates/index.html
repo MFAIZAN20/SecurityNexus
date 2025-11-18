@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to CyberAttack Lab</h2>
+<div class="card">
+    <h3>🎯 About This Application</h3>
+    <p>This is an <strong>intentionally vulnerable</strong> web application designed for educational purposes to demonstrate common web security vulnerabilities.</p>
+</div>
+
+<div class="card">
+    <h3>🔓 Known Vulnerabilities</h3>
+    <ul style="line-height: 2; margin-left: 20px;">
+        <li><strong>SQL Injection</strong> - Login page vulnerable to SQL injection attacks</li>
+        <li><strong>XSS (Cross-Site Scripting)</strong> - Message board allows script injection</li>
+        <li><strong>CSRF</strong> - Transfer functionality has no CSRF protection</li>
+        <li><strong>IDOR</strong> - Direct object reference in profile URLs</li>
+        <li><strong>Command Injection</strong> - Ping tool executes system commands</li>
+        <li><strong>Path Traversal</strong> - File download vulnerable to directory traversal</li>
+        <li><strong>Information Disclosure</strong> - Search reveals sensitive data</li>
+        <li><strong>Broken Authentication</strong> - Weak passwords and session management</li>
+        <li><strong>Missing Authorization</strong> - Admin panel accessible without proper checks</li>
+        <li><strong>Insecure Configuration</strong> - Debug mode enabled, weak secret key</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>🚀 Get Started</h3>
+    <p>Login with one of these test accounts:</p>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Role</th>
+        </tr>
+        <tr>
+            <td>admin</td>
+            <td>admin123</td>
+            <td>Administrator</td>
+        </tr>
+        <tr>
+            <td>john</td>
+            <td>password</td>
+            <td>User</td>
+        </tr>
+        <tr>
+            <td>alice</td>
+            <td>123456</td>
+            <td>User</td>
+        </tr>
+        <tr>
+            <td>bob</td>
+            <td>qwerty</td>
+            <td>User</td>
+        </tr>
+    </table>
+    <a href="/login" class="btn">Go to Login</a>
+</div>
+
+<div class="card">
+    <h3>⚠️ Warning</h3>
+    <p style="color: #c62828; font-weight: bold;">
+        This application is INTENTIONALLY INSECURE. Never deploy this on a public server or network. 
+        Use only in isolated lab environments for educational purposes.
+    </p>
+</div>
+{% endblock %}

