@@ -1,0 +1,94 @@
+# Python bytecode and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.whl
+.cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# IDE and editor noise
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store
+
+# Environment and secrets
+.env
+.env.*
+*.env
+config.ini
+secrets.txt
+*.key
+*.pem
+*.crt
+*.der
+*.p12
+*.pfx
+
+# Logs and generated reports
+logs/
+*.log
+reports/**
+reporting/**
+!reports/.gitkeep
+!reporting/.gitkeep
+
+# Local data and large artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.pdf
+*.pptx
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.7z
+*.rar
+project.zip
+Presentation.pptx
+
+# Backup and temp files
+*.bak
+*.tmp
