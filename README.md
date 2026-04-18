@@ -671,7 +671,7 @@ This project is licensed under the **Educational Use License**.
 ## 📬 Contact
 
 - **Author**: Faizan
-- **GitHub**: [github.com/yourusername/SecurityNexus](https://github.com/yourusername)
+- **GitHub**: [(https://github.com/MFAIZAN20/SecurityNexus)]
 - **Project**: SecurityNexus - Full-Stack Cybersecurity Assessment Platform
 - **Issues**: Report bugs or request features via GitHub Issues
 
